@@ -4,8 +4,8 @@ public class Sinistro {
     private String endereco;
 
     // Construtor
-    public Sinistro(int id, String data, String endereco) {
-        this.id = id;
+    public Sinistro(String data, String endereco) {
+        setId();
         this.data = data;
         this.endereco = endereco;
     }
@@ -15,8 +15,9 @@ public class Sinistro {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId() {
+        double num = Math.random();
+        this.id = (int) (num * 1000);
     }
 
     public String getData() {
@@ -33,6 +34,15 @@ public class Sinistro {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public String toString() {
+        String text = "";
+        text += String.format("id: %d\n", id);
+        text += String.format("data: %s\n", data);
+        text += String.format("endereço: %s\n", endereco);
+
+        return text;
     }
 
 }
