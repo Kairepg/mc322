@@ -5,7 +5,7 @@ public class Cliente {
     private int idade;
     private String endereco;
 
-    // GuiGuilhy
+    // Construtor
     public Cliente(String nome, String cpf, String dataNascimento, int idade, String endereco) {
         this.nome = nome;
         this.cpf = cpf;
@@ -14,7 +14,7 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-        // marco aurélio
+        // Getters e setters
     public String getNome() {
         return nome;
     }
@@ -56,7 +56,14 @@ public class Cliente {
     }
 
     public String toString() {
-        return "guilherme";
+        String text = "";
+        text += String.format("nome: %s\n", nome);
+        text += String.format("cpf: %s\n", cpf);
+        text += String.format("data de nascimento: %s\n", dataNascimento);
+        text += String.format("idade: %d\n", idade);
+        text += String.format("endereço: %s\n", endereco);
+
+        return text;
     }
 
     public boolean validarCPF(String cpf) {
@@ -64,7 +71,7 @@ public class Cliente {
         String editedCPF;
         int resto;
 
-        editedCPF = cpf.replaceAll(".", "");
+        editedCPF = cpf.replaceAll("\\.+", "");
         editedCPF = editedCPF.replaceAll("-", "");
 
         if(editedCPF.length() != 11) {
@@ -77,27 +84,29 @@ public class Cliente {
         }
         
         for(int i = 0; i < 9; i++) {
-            soma += editedCPF.charAt(i) * (10 - i);
+            soma += Character.getNumericValue(editedCPF.charAt(i)) * (i + 1);
         }
-        resto = (soma * 10)%11;
-        
+
+        resto = soma % 11;
         if(resto == 10) {
             resto = 0;
         }
-        if(resto != editedCPF.charAt(9)) {
+
+        if(resto != Character.getNumericValue(editedCPF.charAt(9))) {
             return false;
         }
 
         soma = 0;
         for(int i = 0; i < 10; i++) {
-            soma += editedCPF.charAt(i) * (11 - i);
+            soma += Character.getNumericValue(editedCPF.charAt(i)) * i;
         }
-        resto = (soma * 10)%11;
-        
+
+        resto = soma % 11;
         if(resto == 10) {
             resto = 0;
         }
-        if(resto != editedCPF.charAt(10)) {
+        
+        if(resto != Character.getNumericValue(editedCPF.charAt(10))) {
             return false;
         }
 

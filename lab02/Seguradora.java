@@ -4,7 +4,7 @@ public class Seguradora {
     private String email;
     private String endereco;
 
-    // Guilhy
+    // Construtor
     public Seguradora(String nome, String telefone, String email, String endereco) {
         this.nome = nome;
         this.telefone = telefone;
@@ -12,7 +12,7 @@ public class Seguradora {
         this.endereco = endereco;    
     }
 
-        // bruninho murilo
+        // Getters e setters
     public String getNome() {
         return nome;
     }

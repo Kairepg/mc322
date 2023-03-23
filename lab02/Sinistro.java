@@ -3,14 +3,14 @@ public class Sinistro {
     private String data;
     private String endereco;
 
-    // Narguila
+    // Construtor
     public Sinistro(int id, String data, String endereco) {
         this.id = id;
         this.data = data;
         this.endereco = endereco;
     }
 
-        // daniel da silva
+        // Getters e setters
     public int getId() {
         return id;
     }

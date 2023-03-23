@@ -3,14 +3,14 @@ public class Veiculo {
     private String marca;
     private String modelo;
 
-    // GuilhermeHFS
+    // Construtor
     public Veiculo(String placa, String marca, String modelo) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
     }
 
-        //lucas martiniano
+        // Getters e setters
     public String getPlaca() {
         return placa;
     }
