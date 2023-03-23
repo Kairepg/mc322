@@ -19,5 +19,8 @@ public class Main {
         ale_seixas.setEndereco("rua do Ale seixas");
         System.out.println(String.format("Ele mudou pra uma rua nova: %s", ale_seixas.getEndereco()));
 
+        System.out.println("ah nao, mais um acidente, sinistro segue:");
+        Sinistro medonho = new Sinistro("23/02/2023", "rua do limao 3");
+        System.out.println(medonho);
     }
 }
