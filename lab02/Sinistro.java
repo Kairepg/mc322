@@ -17,7 +17,7 @@ public class Sinistro {
 
     public void setId() {
         double num = Math.random();
-        this.id = (int) (num * 1000);
+        this.id = (int) (num * 100000);
     }
 
     public String getData() {

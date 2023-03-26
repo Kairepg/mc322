@@ -66,10 +66,10 @@ public class Cliente {
         return text;
     }
 
-    public boolean validarCPF(String cpf) {
-        int soma = 0;
+    public boolean validarCPF() {
+        int soma = 0, resto;
         String editedCPF;
-        int resto;
+        char firstChar;
 
         editedCPF = cpf.replaceAll("\\.+", "");
         editedCPF = editedCPF.replaceAll("-", "");
@@ -78,7 +78,7 @@ public class Cliente {
             return false;
         }
 
-        char firstChar = editedCPF.charAt(0);
+        firstChar = editedCPF.charAt(0);
         if(editedCPF.replaceAll(String.valueOf(firstChar), "") == "") {
             return false;
         }
@@ -86,12 +86,10 @@ public class Cliente {
         for(int i = 0; i < 9; i++) {
             soma += Character.getNumericValue(editedCPF.charAt(i)) * (i + 1);
         }
-
         resto = soma % 11;
         if(resto == 10) {
             resto = 0;
         }
-
         if(resto != Character.getNumericValue(editedCPF.charAt(9))) {
             return false;
         }
@@ -100,12 +98,10 @@ public class Cliente {
         for(int i = 0; i < 10; i++) {
             soma += Character.getNumericValue(editedCPF.charAt(i)) * i;
         }
-
         resto = soma % 11;
         if(resto == 10) {
             resto = 0;
         }
-        
         if(resto != Character.getNumericValue(editedCPF.charAt(10))) {
             return false;
         }

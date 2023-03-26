@@ -45,4 +45,14 @@ public class Seguradora {
         this.endereco = endereco;
     }
 
+    public String toString() {
+        String text = "";
+        text += String.format("nome: %s\n", nome);
+        text += String.format("telefone: %s\n", telefone);
+        text += String.format("email: %s\n", email);
+        text += String.format("endereco: %s\n", endereco);
+
+        return text;
+    }
+
 }
