@@ -67,6 +67,8 @@ public class Cliente {
     }
 
     public boolean validarCPF() {
+        /* valida o cpf do cliente utilizando o 
+        algoritmo para determinar os digitos verificadores */
         int soma = 0, resto;
         String editedCPF;
         char firstChar;

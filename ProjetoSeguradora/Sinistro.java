@@ -16,6 +16,7 @@ public class Sinistro {
     }
 
     public void setId() {
+        /* gera um id aleatorio para o processo */
         double num = Math.random();
         this.id = (int) (num * 100000);
     }
