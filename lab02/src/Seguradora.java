@@ -1,3 +1,5 @@
+package lab02.src;
+
 public class Seguradora {
     private String nome;
     private String telefone;

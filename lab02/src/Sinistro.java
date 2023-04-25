@@ -1,3 +1,5 @@
+package lab02.src;
+
 public class Sinistro {
     private int id;
     private String data;

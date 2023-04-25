@@ -1,13 +1,17 @@
+package lab03.src;
+
 public class Veiculo {
     private String placa;
     private String marca;
     private String modelo;
+    private int anoFabricacao;
 
     // Construtor
-    public Veiculo(String placa, String marca, String modelo) {
+    public Veiculo(String placa, String marca, String modelo, int anoFabricacao) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
+        this.anoFabricacao = anoFabricacao;
     }
 
         // Getters e setters
@@ -35,11 +39,20 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
+    public int getAnoFabricacao() {
+        return anoFabricacao;
+    }
+
+    public void setAnoFabricacao(int anoFabricacao) {
+        this.anoFabricacao = anoFabricacao;
+    }
+
     public String toString() {
         String text = "";
-        text += String.format("placa: %s\n", placa);
-        text += String.format("marca: %s\n", marca);
-        text += String.format("modelo: %s\n", modelo);
+        text += String.format("Placa: %s\n", placa);
+        text += String.format("Marca: %s\n", marca);
+        text += String.format("Modelo: %s\n", modelo);
+        text += String.format("Ano de Fabricacao: %d\n", anoFabricacao);
 
         return text;
     }

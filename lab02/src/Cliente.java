@@ -1,3 +1,5 @@
+package lab02.src;
+
 public class Cliente {
     private String nome;
     private String cpf;
